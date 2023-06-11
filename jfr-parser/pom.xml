@@ -8,17 +8,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>jfr-parser</artifactId>
-    <packaging>maven-plugin</packaging>
+    <name>jfr-parser plugin</name>
 
-    <name>jfr-parser Maven Plugin</name>
-
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
