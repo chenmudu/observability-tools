@@ -4,7 +4,7 @@
 
 #### Features
 - Be doing:
-  - [x] jfr-parser: A jfr parsing library.(be doing)
+  - [x] jfr-parser: A jfr parsing library.
 - Plan to do:
   - [ ] Jfr to pprof.
   - [ ] QL end-to-end conversion。e.g. promql, otql.
