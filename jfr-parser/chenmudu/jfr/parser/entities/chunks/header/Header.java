@@ -39,7 +39,13 @@ public class Header {
     private Long startTicks;
 
     private Long ticksPerSecond;
-
+    /**
+     * Compression flag.
+     */
     private Integer features;
 
+    public Header buildHeaderByByteArray(byte[] arrays) {
+        //
+        return this;
+    }
 }
