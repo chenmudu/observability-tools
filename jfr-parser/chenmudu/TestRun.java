@@ -28,14 +28,17 @@ public class TestRun {
         printBufferProperties(byteBuffer);
     }
 
+    private final static String PROJECT_PATH = System.getProperty("user.dir");
 
-    private final static String FILE_PATH_JFR = "";
+    private final static String DATA_DIR = "\\data\\";
 
-    private final static String FILE_PATH_TXT = "";
+    private final static String FILE_JFR_PATH = PROJECT_PATH + DATA_DIR + "example.jfr";
+
+    private final static String FILE_TXT = PROJECT_PATH + DATA_DIR + "test.txt";
 
     public static void main(String[] args) throws IOException {
         try {
-            init(FILE_PATH_TXT);
+            init(FILE_TXT);
             while(byteBuffer.position() < byteBuffer.limit()) {
                 System.out.print(new String(new byte[]{byteBuffer.get()}));
             }

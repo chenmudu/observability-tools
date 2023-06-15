@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.nio.ByteBuffer;
+
 /**
  * chenmudu@gmail.com
  */
@@ -11,12 +13,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MetadataEvent {
+    //
+    private Integer size;
 
-    private Long startTime;
+    /**
+     * when eventType != 0 unexpected metadata event.
+     */
+    private Long eventType;
+
+    private Long start;
 
     private Long duration;
 
-    private Long id;
+    private Long metaDataId;
 
     private Root root;
+
+
+    public MetadataEvent parseMetadataEvent(ByteBuffer buffer) {
+
+        return this;
+    }
 }
