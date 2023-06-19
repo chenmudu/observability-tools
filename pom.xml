@@ -13,8 +13,9 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <hutu-utils.version>5.8.16</hutu-utils.version>
     <lombok.version>1.18.12</lombok.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <modules>
@@ -28,6 +29,11 @@
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.hutool</groupId>
+        <artifactId>hutool-all</artifactId>
+        <version>${hutu-utils.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
