@@ -15,15 +15,15 @@ import java.nio.ByteBuffer;
 @AllArgsConstructor
 public class Header {
 
-    private Integer headerSize = 60;
+    public static Integer headerSize = 60;
 
-    private Byte magicCharF = 'F';
+    public static Byte magicCharF = 'F';
 
-    private Byte majorCharL = 'L';
+    public static Byte majorCharL = 'L';
 
-    private Byte majorCharR = 'R';
+    public static Byte majorCharR = 'R';
 
-    private Byte majorNumber0 = 0;
+    public static Byte majorNumber0 = 0;
 
     /**
      * It didn't seem to do much good.

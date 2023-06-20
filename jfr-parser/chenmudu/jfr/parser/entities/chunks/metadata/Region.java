@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Region implements ITreeNodeElement {
+public class Region extends BaseTreeNodeElement {
     /**
      * key: locale
      */
@@ -28,13 +28,13 @@ public class Region implements ITreeNodeElement {
     private String ticks2Millis;
 
     @Override
-    public ITreeNodeElement getChildNodeElementByNodeName(String nodeName) {
+    public BaseTreeNodeElement getChildNodeElementByNodeName(String nodeName) {
         //empty implementation.
         return null;
     }
 
     @Override
-    public ITreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
+    public BaseTreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
         if(StrUtil.isNotEmpty(propertyKey)) {
             if (StrUtil.equals(propertyKey, StringConstants.METADATA_TREE_NODE_PROPERTY_LOCALE)) {
                 this.locale = propertyValue;

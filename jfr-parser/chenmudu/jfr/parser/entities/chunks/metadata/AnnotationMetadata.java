@@ -16,7 +16,7 @@ import java.util.Map;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AnnotationMetadata implements ITreeNodeElement {
+public class AnnotationMetadata extends BaseTreeNodeElement {
 
     /**
      * key: class
@@ -29,12 +29,12 @@ public class AnnotationMetadata implements ITreeNodeElement {
     private Map<String, String> annotationMetadata;
 
     @Override
-    public ITreeNodeElement getChildNodeElementByNodeName(String nodeName) {
+    public BaseTreeNodeElement getChildNodeElementByNodeName(String nodeName) {
         return null;
     }
 
     @Override
-    public ITreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
+    public BaseTreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
         if (StrUtil.isNotEmpty(propertyKey)) {
             if (StrUtil.equals(StringConstants.METADATA_TREE_NODE_PROPERTY_CLASS, propertyKey)) {
                 this.classId = Long.parseLong(propertyValue);

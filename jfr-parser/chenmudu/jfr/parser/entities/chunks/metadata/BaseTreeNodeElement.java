@@ -1,12 +1,12 @@
 package jfr.parser.entities.chunks.metadata;
 
-public interface ITreeNodeElement {
+public abstract class BaseTreeNodeElement {
     /**
      *
      * @param nodeName current node name.
      * @return Current Node.
      */
-    ITreeNodeElement getChildNodeElementByNodeName(final String nodeName);
+    public abstract BaseTreeNodeElement getChildNodeElementByNodeName(final String nodeName);
 
 
     /**
@@ -15,6 +15,6 @@ public interface ITreeNodeElement {
      * @param propertyValue Node property value.
      * @return
      */
-    ITreeNodeElement buildCurrentNodeElementBaseProperties(final String propertyKey, final String propertyValue);
+    public abstract BaseTreeNodeElement buildCurrentNodeElementBaseProperties(final String propertyKey, final String propertyValue);
 
 }
