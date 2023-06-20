@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Root implements ITreeNodeElement {
+public class Root extends BaseTreeNodeElement {
     /**
      * key: metadata.
      */
@@ -26,7 +26,7 @@ public class Root implements ITreeNodeElement {
      * @return
      */
     @Override
-    public ITreeNodeElement getChildNodeElementByNodeName(String nodeName) {
+    public BaseTreeNodeElement getChildNodeElementByNodeName(String nodeName) {
 
         if (StrUtil.isEmpty(nodeName)) {
             return null;
@@ -44,7 +44,7 @@ public class Root implements ITreeNodeElement {
     }
 
     @Override
-    public ITreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
+    public BaseTreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
         //empty implementation.
         return null;
     }

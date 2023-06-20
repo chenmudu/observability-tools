@@ -15,6 +15,7 @@
   <properties>
     <hutu-utils.version>5.8.16</hutu-utils.version>
     <lombok.version>1.18.12</lombok.version>
+    <main.user.dir>${user.dir}</main.user.dir>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -62,6 +63,22 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.googlecode.maven-java-formatter-plugin</groupId>
+        <artifactId>maven-java-formatter-plugin</artifactId>
+        <version>0.4</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>format</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <configFile>${main.user.dir}/Formatter.xml</configFile>
+          <encoding>${project.encoding}</encoding>
+        </configuration>
       </plugin>
     </plugins>
   </build>

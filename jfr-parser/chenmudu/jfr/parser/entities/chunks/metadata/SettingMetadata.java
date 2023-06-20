@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.security.Key;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +17,7 @@ import java.util.Map;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SettingMetadata implements ITreeNodeElement {
+public class SettingMetadata extends BaseTreeNodeElement {
 
     /**
      * key: value
@@ -26,12 +25,12 @@ public class SettingMetadata implements ITreeNodeElement {
     private Map<String, String> settingMetadata;
 
     @Override
-    public ITreeNodeElement getChildNodeElementByNodeName(String nodeName) {
+    public BaseTreeNodeElement getChildNodeElementByNodeName(String nodeName) {
         return null;
     }
 
     @Override
-    public ITreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
+    public BaseTreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
         if (StrUtil.isNotEmpty(propertyKey) && StrUtil.equals(StringConstants.METADATA_TREE_NODE_PROPERTY_VALUE, propertyKey)) {
             if (CollectionUtil.isEmpty(this.settingMetadata)) {
                 this.settingMetadata = new HashMap<>(10);

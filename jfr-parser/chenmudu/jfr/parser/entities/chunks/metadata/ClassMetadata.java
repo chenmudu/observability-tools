@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ClassMetadata implements ITreeNodeElement {
+public class ClassMetadata extends BaseTreeNodeElement {
 
     /**
      * key: id
@@ -54,7 +54,7 @@ public class ClassMetadata implements ITreeNodeElement {
     private List<AnnotationMetadata> annotationMetadataList;
 
     @Override
-    public ITreeNodeElement getChildNodeElementByNodeName(String nodeName) {
+    public BaseTreeNodeElement getChildNodeElementByNodeName(String nodeName) {
         if (StrUtil.isNotEmpty(nodeName)) {
             if (StrUtil.equals(nodeName, StringConstants.METADATA_TREE_NODE_FIELD)) {
                 if (CollectionUtil.isEmpty(this.fieldMetadataList)) {
@@ -77,7 +77,7 @@ public class ClassMetadata implements ITreeNodeElement {
     }
 
     @Override
-    public ITreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
+    public BaseTreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
         if (StrUtil.isNotEmpty(propertyKey)) {
             if (StrUtil.equals(StringConstants.METADATA_TREE_NODE_PROPERTY_ID, propertyKey)) {
                 this.id = Long.parseUnsignedLong(propertyValue);

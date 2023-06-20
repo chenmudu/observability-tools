@@ -15,14 +15,14 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MetadataEventMetadata implements ITreeNodeElement {
+public class MetadataEventMetadata extends BaseTreeNodeElement {
     /**
      * key: class
      */
     private List<ClassMetadata> classes;
 
     @Override
-    public ITreeNodeElement getChildNodeElementByNodeName(String nodeName) {
+    public BaseTreeNodeElement getChildNodeElementByNodeName(String nodeName) {
         if(StrUtil.isNotEmpty(nodeName) && StrUtil.equals(nodeName, StringConstants.METADATA_TREE_NODE_CLASS)) {
             if (CollectionUtil.isEmpty(this.classes)) {
                 this.classes = new ArrayList<>(10);
@@ -33,7 +33,7 @@ public class MetadataEventMetadata implements ITreeNodeElement {
     }
 
     @Override
-    public ITreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
+    public BaseTreeNodeElement buildCurrentNodeElementBaseProperties(String propertyKey, String propertyValue) {
         return null;
     }
 }

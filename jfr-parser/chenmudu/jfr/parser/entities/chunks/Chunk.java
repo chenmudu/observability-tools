@@ -17,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Chunk {
+
     private Header header;
 
     private MetadataEvent metadataEvent;
